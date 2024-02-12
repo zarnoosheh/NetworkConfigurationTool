@@ -1,0 +1,22 @@
+﻿<Window x:Class="NetworkConfigurationTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetworkConfigurationTool"
+        mc:Ignorable="d"
+        Title="Adapters Info" Height="450" Width="800" Icon="{StaticResource icon}">
+    <Grid>
+        <ListView ItemsSource="{Binding NetworkAdapters}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Adapter Name" DisplayMemberBinding="{Binding Name}" Width="200"/>
+                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" Width="100"/>
+                    <GridViewColumn Header="IP Address" DisplayMemberBinding="{Binding IPAddress}" Width="100"/>
+                    <GridViewColumn Header="SubNetMask (IPv4Mask)" DisplayMemberBinding="{Binding SubNetMask}" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+    
+</Window>
